@@ -28,7 +28,6 @@ const api = process.env.API_URL
 app.use(`${api}/categories`, categoriesRoutes)
 app.use(`${api}/products`, productsRoutes)
 app.use(`${api}/users`, usersRoutes)
-app.use(`users`, usersRoutes)
 app.use(`${api}/orders`, ordersRoutes)
 
 //Database
@@ -36,7 +35,7 @@ mongoose
   .connect(process.env.CONNECTION_STRING, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    // dbName: 'eshop-database',
+    dbName: 'Eshop',
   })
   .then(() => {
     console.log('Database Connection is ready...')
@@ -44,10 +43,6 @@ mongoose
   .catch((err) => {
     console.log(err)
   })
-
-app.get('/', function (req, res) {
-  res.send('hello world')
-})
 
 const PORT = process.env.PORT || 3000
 //Server
