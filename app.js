@@ -44,6 +44,10 @@ mongoose
     console.log(err)
   })
 
+app.get('/', function (req, res) {
+  res.send('hello world')
+})
+
 const PORT = process.env.PORT || 3000
 //Server
 app.listen(PORT, () => {
