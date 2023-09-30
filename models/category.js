@@ -11,7 +11,7 @@ const categorySchema = mongoose.Schema({
   color: {
     type: String,
   },
-})
+}, {collection: 'categories'})
 
 categorySchema.virtual('id').get(function () {
   return this._id.toHexString()
